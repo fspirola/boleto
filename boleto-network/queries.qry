@@ -17,3 +17,10 @@ query selectMembers {
   statement:
       SELECT org.boleto.Membro
 }
+
+query selectBoleto {
+  description: "Select boletos a partir de um codigo de barra"
+  statement:
+      SELECT org.boleto.Boleto
+	  WHERE (codigoBarra == _$codigoBarra)  	 
+}
