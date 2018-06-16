@@ -1,0 +1,34 @@
+namespace org.boleto.model
+
+asset Boleto identified by boletoId {
+  o String   boletoId
+  o String   codigoBarra
+  o String	 dataVencimento
+  --> Membro pagadorPF
+  o Status	 status
+  --> Membro ifPagadora
+  --> Membro ifBeneficiario
+}
+
+enum Status {
+  o PEDENTE
+  o PAGO
+}
+
+participant Membro identified by membroId {
+  o String membroId
+  o String nome
+  o String assinatura
+  o String cpfcnpj
+}
+
+transaction RegistroBoleto {
+  --> Boleto boleto
+  --> Membro ifBeneficiario
+  --> Membro pagadorPF
+}
+
+transaction PagamentoBoleto {
+  --> Boleto boleto
+  --> Membro ifPagadora
+}
