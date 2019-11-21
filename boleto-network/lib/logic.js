@@ -40,6 +40,10 @@ async function pagarBoletoPorCodigoBarra(PagamentoBoletoCodigoBarra) {
     throw new Error('Não existe Boleto');
   }
   
+  if (Date.parse(boleto.dataVencimento) < Date.now()) {
+      throw new Error('Vencido');
+   }
+  
   boleto.status = 'PAGO';
   
   
