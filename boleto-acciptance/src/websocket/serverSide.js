@@ -11,6 +11,8 @@ var chaincodeLib = null;
 var websocketServer = function(logger, chaincodeLibp) {
     var enrollInterval;
     var checkPerodically;
+
+    console.log('parametro serverside',chaincodeLibp)
     chaincodeLib = chaincodeLibp; 
     var knownHeight = 0;
     /**
