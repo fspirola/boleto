@@ -64,7 +64,8 @@ var fcw = require('./src/fabric/fcw/index')({
  * enroll an admin with the CA
  */
 // Initializing Chaincode Library
-chaincodeLib = require('./src/fabric/chaincodeLib')(options, fcw, logger);
+var chaincodeLib = require('./src/fabric/chaincodeLib')(options, fcw, logger);
+console.log('Inicializando chaincodeLib',chaincodeLib);
 // enrolling admin
 chaincodeLib.chainCodeEnroll();
 
@@ -132,6 +133,6 @@ var server = http.createServer(app).listen(appEnv.port, function() {
 });
 
 // setup websocket server
-wss.setup(server,chaincodeLib);
+wss.setup(server);
 
 module.exports = app;
