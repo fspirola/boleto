@@ -1,0 +1,414 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-decoration: none !important;
+    background: #f7f7f7;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    text-align: left;
+    top: 0;
+    background: #07A0C3;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+    padding-left: 5em;
+    z-index: 2;
+}
+
+#logo {
+    width: 70px;
+    height: 70px;
+    background: #086788;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#logo object {
+    width: 2em;
+    height: 2em;
+    margin: 1em;
+}
+
+#header h2 {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#vitrine {
+    width: 85%;
+    top: 25%;
+    position: absolute;
+    left: 7.5%;
+    text-align: center;
+}
+
+ul#listaRevista {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ul#listaRevista>li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+}
+
+.container {
+    width: 15em;
+    height: 26em;
+    margin: 1em 0.5em;
+    float: left;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    align-self: center;
+    box-shadow: 0 1px 3px #e3e3e3, 0 1px 2px #ccc;
+}
+
+.container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container p {
+    text-align: center;
+    font-size: 17px;
+    line-height: 17px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+.container img {
+    width: 9em;
+    height: 11em;
+    margin: 8% 18.5% 10%;
+    box-shadow: 0 1px 3px #e3e3e3, 0 1px 2px #ccc;
+}
+
+button.aceitar,
+button.submit {
+    background-color: #f1c40f;
+    width: 65%;
+    height: 2em;
+    box-shadow: 0px 3px 0px 0px #D8AB00;
+    border: none;
+    position: absolute;
+    left: 17.55%;
+    margin-top: 2.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #222;
+}
+
+button.aceitar:active,
+button.submit:active,
+button.confirm:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+button.aceitar:hover,
+button.submit:hover {
+    background-color: #FFDE29;
+}
+
+
+/* Cores específicas para os Bancos*/
+
+button.bradesco {
+    background-color: #c80025;
+    box-shadow: 0px 3px 0px 0px #2f539c;
+    color: #FFF;
+}
+
+button.bradesco:hover {
+    background-color: #FF5555;
+}
+
+button.santander {
+    background-color: #F00;
+    box-shadow: 0px 3px 0px 0px #a10000;
+    color: #FFF;
+}
+
+button.santander:hover {
+    background-color: #ff3333;
+}
+
+button.itau {
+    background-color: #E47E00;
+    box-shadow: 0px 3px 0px 0px #C25C00;
+    color: #FFF;
+}
+
+button.itau:hover {
+    background-color: #F49F11;
+}
+
+button.bancobrasil {
+    background-color: #23569c;
+    box-shadow: 0px 3px 0px 0px #1b4277;
+    color: #FFFFFF;
+}
+
+button.bancobrasil:hover {
+    background-color: #4578bE;
+}
+
+.container p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.container img {
+    margin-bottom: 1em;
+}
+
+button {
+    margin-top: 2em;
+}
+
+h3 {
+    color: #086788;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0.5em 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#fechar {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 0.5em 1em;
+    text-align: center;
+    color: #086788;
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+#mask {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 3;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Black w/ opacity */
+}
+
+#modal {
+    width: 35%;
+    height: 25em;
+    background-color: #fff;
+    left: 32.5%;
+    top: 15%;
+    border-radius: 15px;
+    display: none;
+    position: absolute;
+    z-index: 4;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+#modalBoleto {
+    width: 40em;
+    height: 25em;
+    background: #fff url('/images/boleto.jpg')center no-repeat;
+    background-size: contain;
+    padding: 0;
+    display: none;
+    position: relative;
+    margin: 10em auto;
+    z-index: 4;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+#modalErro {
+    width: 15em;
+    height: 5em;
+    background: #fff;
+    text-align: center;
+    word-wrap: break-word;
+    background-size: contain;
+    border-radius: 15px;
+    padding: 3em;
+    display: none;
+    position: relative;
+    margin: 10em auto;
+    z-index: 4;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+#loadingmessage {
+    width: 15em;
+    height: 5em;
+    background: #fff;
+    text-align: center;
+    word-wrap: break-word;
+    border-radius: 15px;
+    background-size: contain;
+    padding: 3em;
+    display: none;
+    position: relative;
+    margin: 10em auto;
+    z-index: 4;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+#modalBoleto span {
+    display: block;
+    position: absolute;
+    font-size: 11px;
+    color: #222;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#ifBeneficiaria {
+    top: 1.5%;
+    left: 8%;
+}
+
+#linhaDig {
+    top: 1.5%;
+    left: 43%;
+}
+
+#dataVenc {
+    top: 51%;
+    right: 4%;
+}
+
+#valor {
+    top: 58%;
+    right: 4%;
+}
+
+#cpfPagador {
+    bottom: 15%;
+    left: 25%;
+}
+
+#nomePagador {
+    bottom: 15%;
+    left: 5%;
+}
+
+#cnpjBenef {
+    top: 51%;
+    left: 25%;
+}
+
+#nomeBenef {
+    top: 51%;
+    left: 5%;
+}
+
+li {
+    list-style: none;
+    line-height: 45px;
+}
+
+input:focus {
+    outline: 0;
+    border-bottom: 2px solid #086788;
+}
+
+.errspan {
+    float: left;
+    margin-left: 10px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+    color: #555;
+}
+
+#addProposta input[type="text"]:active,
+#addProposta input[type="text"]:focus,
+#addProposta input[type="number"]:active,
+#addProposta input[type="number"]:focus,
+#addProposta input[type="email"]:active,
+#addProposta input[type="email"]:focus,
+#addProposta input[type="date"]:active,
+#addProposta input[type="date"]:focus {
+    border-bottom: 2px solid #086788;
+}
+
+form#addProposta {
+    z-index: 3;
+    margin: 0 auto;
+    background: transparent;
+    border-radius: 5px;
+    width: 85%;
+    height: auto;
+    text-align: center;
+}
+
+#addProposta input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"] {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: transparent;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 0.5em;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-indent: 20px;
+}
+
+#addProposta label {
+    font-size: 13px !important;
+    text-align: left;
+}
+
+#addProposta span {
+    top: 0;
+}
+
+#linhaDig,
+#dataVenc,
+#valor,
+#cpfPagador,
+#nomePagador,
+#cnpjBenef,
+#nomeBenef {
+    color: #222;
+    font-weight: 500;
+}

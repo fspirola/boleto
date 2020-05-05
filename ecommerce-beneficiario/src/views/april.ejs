@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stylesheets/april.css" type="text/css" media="screen">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <script src="scripts/april.js"></script>
+    <script src="scripts/inputMask.js"></script>
+    <title>Editora BlockBR</title>
+</head>
+
+<body>
+
+    <div id="header">
+        <h2>EDITORA BlockBR</h2>
+    </div>
+    <div id="logo"> <object id="svg1" data="images/earth-globe.svg" type="image/svg+xml"></object> </div>
+    <div id="mask"></div>
+    <div id="modalErro"><button>ok</button></div>
+    <div id='loadingmessage' style='display:none'>
+        <img src='images/ajax-loader.gif' />
+    </div>
+    <div id="modalBoleto">
+        <span id="ifBeneficiaria"><!--Nome do Banco--></span>
+        <span id="linhaDig"><!--103869458246026380008641337996753613000000000--></span>
+        <span id="dataVenc"><!--07/05/2017--></span>
+        <span id="valor"><!--11.84--></span>
+        <span id="cpfPagador"><!--321.321.312-XY--></span>
+        <span id="nomePagador"><!--Fulano da Silva--></span>
+        <span id="cnpjBenef"><!--XZ.143.327/0002-XY--></span>
+        <span id="nomeBenef"><!--Editora--></span>
+
+    </div>
+    <div id="modal">
+
+        <div id="fechar">X</div>
+        <h3>Preencha seus dados</h3>
+        <form action="/proposta/adicionar" method="post" id="addProposta">
+            <input class="nome" name="nome" type="text" placeholder="Nome completo" required>
+            <span class="fa fa-user errspan"></span>
+            <input class="date" name="dataNascimento" type="text" placeholder="Data de nascimento" required>
+            <span class="fa fa-calendar-o errspan"></span>
+            <input class="cpf" name="cpf" type="text" placeholder="Número de CPF" required oninvalid="setCustomValidity('Por favor, preencha utilizando apenas números')">
+            <span class="fa fa-id-card errspan"></span>
+            <input class="email" name="email" type="email" placeholder="E-mail" required>
+            <span class="fa fa-envelope-o errspan"></span>
+            <input class="local" name="endereco" type="text" placeholder="Endereço" required>
+            <span class="fa fa-map-marker errspan"></span>
+            <input type="checkbox" name="agree" id="checkbox" required>
+            <input type="hidden" name="idProposta" value="Revista01" required>
+            <input class="valorParcela" type="hidden" name="valor" value="20.90" required>
+            <input class="ifBeneficiaria" type="hidden" name="ifBeneficiaria" value="itau" required>
+            <label for="checkbox">Eu aceito receber um boleto de proposta em meu nome</label>
+            <button class="submit">Enviar</button>
+        </form>
+    </div>
+    <div id="vitrine">
+        <ul id="listaRevista">
+            <li>
+                <div class=container>
+                    <img src="/images/magazine1.png" alt="revista1">
+                    <p>1 Ano</p>
+                    <p style="font-weight: 700;color:#086788">+3 meses grátis</p>
+                    <p>12x R$10,90</p>
+                    <button class="aceitar bancobrasil" onClick="setIFBeneficiaria('bancobrasil', 10.90)">assinar</button>
+                </div>
+            </li>
+            <li>
+                <div class=container>
+                    <img src="/images/magazine2.png" alt="revista2">
+                    <p>1 Ano</p>
+                    <p style="font-weight: 700;color:#086788">+3 meses grátis</p>
+                    <p>12x R$20,90</p>
+                    <button class="aceitar bradesco" onClick="setIFBeneficiaria('bradesco', 20.90)">assinar</button>
+                </div>
+            </li>
+            <li>
+                <div class=container>
+                    <img src="/images/magazine3.png" alt="revista3">
+                    <p>1 Ano</p>
+                    <p style="font-weight: 700;color:#086788">+3 meses grátis</p>
+                    <p>12x R$30,90</p>
+                    <button class="aceitar itau" onClick="setIFBeneficiaria('itau', 30.90)">assinar</button>
+                </div>
+            </li>
+            <li>
+                <div class=container>
+                    <img src="/images/magazine4.png" alt="revista4">
+                    <p>1 Ano</p>
+                    <p style="font-weight: 700;color:#086788">+3 meses grátis</p>
+                    <p>12x R$40,90</p>
+                    <button class="aceitar santander" onClick="setIFBeneficiaria('santander', 40.90)">assinar</button>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    </form>
+</body>
+
+</html>
