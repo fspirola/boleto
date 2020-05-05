@@ -132,6 +132,6 @@ var server = http.createServer(app).listen(appEnv.port, function() {
 });
 
 // setup websocket server
-wss.setup(server);
+wss.setup(server,chaincodeLib);
 
 module.exports = app;
