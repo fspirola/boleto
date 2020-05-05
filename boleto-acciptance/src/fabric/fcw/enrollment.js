@@ -36,7 +36,7 @@ module.exports = function(logger) {
         // Get the contract from the network.
         const contract = network.getContract('boleto');
 
-
+        console.log('###retornando contract', contract);
         return contract;
     } catch (error) {
         console.error(`Failed to evaluate transaction: ${error}`);   
