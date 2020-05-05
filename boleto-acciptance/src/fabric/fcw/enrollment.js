@@ -21,8 +21,8 @@ module.exports = function(logger) {
 
         // Check to see if we've already enrolled the user.
         const userExists = await wallet.exists('user1');
-        if (userExists) {
-            console.log('An identity for the user "user1" already exists in the wallet');
+        if (!userExists) {
+            console.log('An identity for the user "user1" do not exists in the wallet');
             return;
         }
         
@@ -40,6 +40,7 @@ module.exports = function(logger) {
         return contract;
     } catch (error) {
         console.error(`Failed to evaluate transaction: ${error}`);   
+        return;
     }
 
     }
