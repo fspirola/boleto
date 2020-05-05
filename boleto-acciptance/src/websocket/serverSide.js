@@ -6,14 +6,14 @@ var ws = require('ws');
 
 var wss = null;
 const KEEP_ALIVE = 30000; // 30 seconds to authenticate
-var chaincodeLib = null;
+
 
 var websocketServer = function(logger, chaincodeLibp) {
     var enrollInterval;
     var checkPerodically;
 
     console.log('parametro serverside',chaincodeLibp)
-    chaincodeLib = chaincodeLibp; 
+     
     var knownHeight = 0;
     /**
      * Setup web server
