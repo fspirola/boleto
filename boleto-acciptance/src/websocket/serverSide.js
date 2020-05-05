@@ -6,17 +6,18 @@ var ws = require('ws');
 
 var wss = null;
 const KEEP_ALIVE = 30000; // 30 seconds to authenticate
+var chaincodeLib = null;
 
-var websocketServer = function(logger, chaincodeLib) {
+var websocketServer = function(logger, chaincodeLibp) {
     var enrollInterval;
     var checkPerodically;
-
+    chaincodeLib = chaincodeLibp; 
     var knownHeight = 0;
     /**
      * Setup web server
      * @param {*} server 
      */
-    var setup = function(server, cb) {
+    var setup = function(server) {
         /**
          * Enrolling on Blockchain Network to listen to events (Repeating event)
          */
