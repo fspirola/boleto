@@ -18,7 +18,7 @@ module.exports = function(logger) {
         const walletPath = path.join(process.cwd(), 'wallet');
         const wallet = new FileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
-
+        logger.debug('Debug');
         // Check to see if we've already enrolled the user.
         const userExists = await wallet.exists('user1');
         if (!userExists) {
