@@ -95,7 +95,7 @@ var websocketServer = function(logger, chaincodeLibp) {
      * Check for Updates to Ledger 
      */
     var checkForUpates = function() {
-        chaincodeLib.channelStats(function(err, resp) {
+        chaincodeLibp.channelStats(function(err, resp) {
             var newBlock = false;
             if (err != null) {
                 var eobj = {
