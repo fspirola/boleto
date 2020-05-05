@@ -23,7 +23,7 @@ var websocketServer = function(logger, chaincodeLibp) {
         /**
          * Enrolling on Blockchain Network to listen to events (Repeating event)
          */
-        var chaincodeObj = chaincodeLib.chainCodeEnroll();
+        var chaincodeObj = chaincodeLibp;
         console.log('serverside teste chaincode',chaincodeObj);
             if (chaincodeObj != null) {
                 logger.debug("Usuario autenticado (websocket)");
