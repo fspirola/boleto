@@ -9,7 +9,7 @@ module.exports = function(g_options, logger) {
      * Enrollment functions
     */
     var chainCodeEnroll = function() {
-    enrollment.chainCodeEnroll();
+        enrollment.chainCodeEnroll();
     };
     /**
      * Query Chaincode

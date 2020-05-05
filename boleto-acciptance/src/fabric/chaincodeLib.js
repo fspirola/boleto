@@ -137,7 +137,8 @@ module.exports = function(options, fcw, logger) {
 
     // get block height
     var channelStats = function(cb) {
-        logger.debug('Consultando blockchain height...');
+        chaincode=chainCodeEnroll();
+        logger.debug('Consultando blockchain height...',chaincode);
         fcw.queryChannel(chainCode, null, cb);
     };
 
